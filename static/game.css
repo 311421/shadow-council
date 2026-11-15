@@ -67,17 +67,21 @@ select:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .attempt-result.approved{background:#dce8ca;color:#325b34}.attempt-result.rejected{background:#f0dbd0;color:#9b4934}.attempt-result.pending{background:#eee5be;color:#756126}
 @media(max-width:700px){.attempt-squares{gap:2px;margin-top:10px}.attempt-square{font-size:9px;border-radius:2px}.attempt-square.unused{font-size:7px}.mission-slot .number{font-size:7px;letter-spacing:0}.attempt-inspector{padding:10px;font-size:11px;align-items:flex-start}.attempt-inspector .muted{font-size:11px}.player.history-party,.player.history-outside{flex-wrap:wrap}.historical-vote{flex-basis:100%;margin-top:2px;text-align:center;font-size:10px}.vote-history{padding:17px}.vote-history .counter{font-size:9px}.vote-table th,.vote-table td{padding:10px 8px}.vote-table-scroll{max-height:360px}}
 
-/* Players are rows; expeditions are columns. */
-.expedition-matrix thead th{min-width:130px;max-width:220px;vertical-align:top}
-.expedition-matrix tbody th{min-width:110px;max-width:180px;white-space:normal;overflow-wrap:anywhere}
-.expedition-result{display:block;font-size:10px;font-weight:400;margin-top:8px;line-height:1.6}
-.expedition-player-cell{text-align:center;min-width:130px;line-height:1.8;color:var(--muted)}
-.expedition-player-cell.party-member{background:#e9efda;color:var(--ink);box-shadow:inset 0 -3px #a4b16c}
-.expedition-player-cell>span{display:block;font-size:11px}
-.attempt-column-button{display:block;text-align:left;min-height:30px;margin-top:5px;font-weight:400}
-.attempt-column-button.inspecting{outline:2px solid var(--orange);outline-offset:1px}
-.player-votes{min-width:130px;text-align:center;vertical-align:top!important}
-.vote-attempt{display:flex;align-items:center;justify-content:center;gap:10px;min-height:30px;padding:5px;margin:4px 0;border-radius:3px;font-size:16px;font-weight:700}
-.vote-attempt small{font-size:9px;color:var(--muted);font-weight:400}
+/* Compact player-by-expedition table: all expeditions fit the panel. */
+.expedition-matrix{width:100%;table-layout:fixed;min-width:0}
+.expedition-matrix th,.expedition-matrix td{min-width:0;max-width:none;padding:8px 4px;overflow-wrap:anywhere}
+.expedition-matrix thead th{min-width:0;max-width:none;text-align:center;vertical-align:top;font-size:11px}
+.expedition-matrix thead th:first-child,.expedition-matrix tbody th{width:22%;min-width:0;max-width:none;text-align:left;white-space:normal;font-size:10px}
+.expedition-result{display:block;font-size:9px;font-weight:400;margin-top:5px;line-height:1.3;white-space:nowrap}
+.expedition-matrix .expedition-player-cell{text-align:center;min-width:0;line-height:1.6;color:var(--muted)}
+.expedition-player-cell.party-member{background:#e9efda;color:var(--ink);box-shadow:inset 0 -2px #a4b16c}
+.expedition-player-cell>span{display:inline-block;font-size:11px;margin:0 2px}
+.attempt-column-button{display:block;width:100%;padding:3px 0;min-height:24px;margin-top:3px;font-size:9px;font-weight:400;text-align:center}
+.attempt-column-button.inspecting{outline:1px solid var(--orange);outline-offset:0}
+.expedition-matrix .player-votes{min-width:0;text-align:center;vertical-align:top}
+.vote-attempt{display:flex;align-items:center;justify-content:center;gap:4px;min-height:24px;padding:2px;margin:3px 0;border-radius:3px;font-size:12px;font-weight:700}
+.vote-attempt small{font-size:8px;color:var(--muted);font-weight:400}
 .vote-attempt.party-member{background:#e9efda;box-shadow:inset 0 -2px #a4b16c}
 .vote-attempt.inspecting{background:#f2e7cf;outline:1px solid var(--orange)}
+.vote-attempt .party-dot{margin-left:0;width:3px;height:3px}
+@media(max-width:450px){.expedition-matrix th,.expedition-matrix td{padding:6px 2px}.expedition-player-cell>span{font-size:10px;margin:0 1px}.expedition-matrix thead th:first-child,.expedition-matrix tbody th{font-size:9px}}
