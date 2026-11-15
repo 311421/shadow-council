@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3*
+test-council.sqlite3*
+.secret-key
+staticfiles/
+.env
+
+.browser-profiles/
+tmp/

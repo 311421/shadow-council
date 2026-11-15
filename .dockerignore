@@ -1,0 +1,16 @@
+*
+!Dockerfile
+!requirements.txt
+!requirements-docker.txt
+!docker-entrypoint.py
+!manage.py
+!council/
+!council/**
+!game/
+!game/**
+!templates/
+!templates/**
+!static/
+!static/**
+**/__pycache__/
+**/*.pyc

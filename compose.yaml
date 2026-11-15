@@ -1,0 +1,20 @@
+name: shadow-council
+
+services:
+  web:
+    build: .
+    image: shadow-council:local
+    ports:
+      - "127.0.0.1:${APP_PORT:-8000}:8000"
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_ALLOWED_HOSTS: "localhost,127.0.0.1,[::1]"
+      # Local HTTP. Set to 1 when deploying behind HTTPS.
+      DJANGO_COOKIE_SECURE: "0"
+    volumes:
+      - council-data:/data
+    restart: unless-stopped
+    init: true
+
+volumes:
+  council-data:
