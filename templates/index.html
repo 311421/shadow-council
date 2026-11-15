@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c37">
+  <meta name="description" content="A game of secret loyalties. Gather your friends, form a team, and find the saboteurs.">
+  <title>Shadow Council — Trust is a dangerous game.</title>
+  <link rel="stylesheet" href="{% static 'game.css' %}?v=6">
+  <script src="{% static 'vote-history.js' %}?v=2" defer></script>
+  <script src="{% static 'quest-choices.js' %}?v=5" defer></script>
+  <script src="{% static 'quest.js' %}?v=6" defer></script>
+  <script src="{% static 'game.js' %}?v=6" defer></script>
+</head>
+<body data-room="{{ room_code|default:'' }}">
+  <header class="masthead">
+    <a class="wordmark" href="/" aria-label="Shadow Council home"><span class="brand-symbol" aria-hidden="true">◈</span> SHADOW COUNCIL</a>
+    <span class="edition">A GAME OF SECRET LOYALTIES <span class="status-dot"></span></span>
+  </header>
+  <main id="app"><p class="loading">Opening the dossier…</p></main>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <footer><span>TRUST CAREFULLY. PLAY TOGETHER.</span><span>4–10 PLAYERS <b>·</b> GUEST ACCESS <b>·</b> NO DOWNLOAD</span></footer>
+  <dialog id="rules-dialog">
+    <div class="dialog-top"><span class="eyebrow">FIELD MANUAL / 01</span><button class="icon-button" id="close-rules" aria-label="Close rules">✕</button></div>
+    <h2>Quest Director’s Cut</h2>
+    <p>Good wins with three successful expeditions. Three failures (two with four players) trigger a Final Quest, where either faction can still win.</p>
+    <ol class="rules-list">
+      <li><b>Choose a party and Magic.</b> No vote is held. The leader assigns Magic to a party member, usually forcing Success. Morgan can ignore it; Youth must play Failure under Magic.</li>
+      <li><b>Complete the expedition.</b> Good normally plays Success; Evil may play Failure. Expedition 4 with 7+ players and expedition 3 with 8+ players need two Failures.</li>
+      <li><b>Choose successors.</b> The outgoing leader chooses the next leader. Each player leads once. Amulet holders cannot lead. At marked transitions, also choose a different eligible amulet holder to privately check allegiance.</li>
+      <li><b>Use your character.</b> Cleric knows the first leader’s apparent allegiance. Troublemaker appears Evil. Blind Hunter does not know the Evil team; other Evil players know the Hunter only with 4–5 players.</li>
+      <li><b>Final Quest.</b> Discuss for five minutes, then stop talking. Hunter may reveal and name two Good roles, including Cleric. Both correct: Evil wins; otherwise Good wins. In 4–5-player games, the undealt Good card is also a possible target.</li>
+      <li><b>Last Chance.</b> If Hunter declines, everyone accuses two players simultaneously. Evil’s accusations are discarded. Duke may remove one accusation, then Archduke may redirect one. Good must point at all Evil players and no Good players. If every expedition leader was Evil, Good wins even when the endgame would favor Evil.</li>
+    </ol>
+    <p class="rule-warning">Keep role cards and private checks secret. Role-specific card restrictions are enforced by the server. Amulets reveal allegiance, not exact character; Troublemaker always appears Evil.</p>
+    <p class="muted">Use one browser profile per player. Tabs in the same profile share a guest identity. Keep your browser cookies to return to your seat.</p>
+  </dialog>
+</body>
+</html>
